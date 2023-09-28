@@ -1,13 +1,21 @@
 import * as member from "./js-member.js";
 import * as result from "./js-result.js";
+import * as listRenderer from "./listRenderer.js"
 
 main();
 
 async function main() {
   await buildMembersList();
   await pushResultsToList();
-  displayMembers(members);
-  showResults(results);
+  // displayMembers(members);
+  // showResults(results);
+
+  // const constructMember = listRenderer.construct(members);
+  // constructMember.render();
+  // const constructResult = listRenderer.construct(results);
+  // constructResult.render();
+   const constructRenderer = listRenderer.construct();
+   constructRenderer.render(members, results);
 }
 
 const members = [];
@@ -16,6 +24,7 @@ async function fetchMembers() {
   const resp = await fetch("members.json");
   const data = await resp.json();
   return data;
+  
 }
 
 async function buildMembersList() {
@@ -25,6 +34,7 @@ async function buildMembersList() {
     const memberObj = member.construct(orgobj);
     members.push(memberObj);
   }
+  
 }
 
 function displayMembers(members) {
