@@ -1,0 +1,64 @@
+/* Reset some default styles */
+body,
+h1,
+h2,
+table {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a background color and text color for the entire page */
+body {
+  background-color: #494242;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+/* Style the header */
+h1 {
+  background-color: #000000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the main content container */
+#membersTable,
+#results {
+  width: 80%;
+  margin: 20px auto;
+  background-color: #8d8787;
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+}
+
+/* Style table headers */
+th {
+  background-color: #282b2d;
+  color: #fff;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Style table rows */
+tr:nth-child(even) {
+  background-color: #bab7b7;
+}
+
+/* Style table cells */
+td {
+  padding: 10px;
+}
+
+/* Style the title for the results table */
+h2 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 24px;
+  color: white;
+}
+
+/* Style the scripts container (if needed) */
+script {
+  display: none; /* Hide the scripts, they are not part of the styling */
+}

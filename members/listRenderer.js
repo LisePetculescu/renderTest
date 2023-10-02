@@ -1,20 +1,20 @@
-function construct(members, results) {
+function construct(list) {
   const ListRenderer = {
-    // render() {
-    //   MemberRenderer.render();
-    //   ResultRenderer.render();
-    // }
-    render(member, result) {
-      MemberRenderer.render(members);
-      ResultRenderer.render(results);
+    render() {
+      // MemberRenderer.render();
+      ResultRenderer.render();
     }
+    // render(members, results) {
+    //   MemberRenderer.render(members);
+    //   ResultRenderer.render(results);
+    // }
   };
   const MemberRenderer = {
     render(members) {
       const table = document.querySelector("table#membersTable tbody");
       table.innerHTML = "";
       // console.log(members);
-      for (const member of members) {
+      for (const member of list) {
         const name = member.firstName + " " + member.lastName;
 
         const html = /*html*/ `
@@ -41,7 +41,7 @@ function construct(members, results) {
       const table = document.querySelector("table#results tbody");
       table.innerHTML = "";
 
-      for (const result of results) {
+      for (const result of list) {
         let desciplin;
 
         if (result._discipline === "backstroke") {
